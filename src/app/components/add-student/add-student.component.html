@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="container w-50">
+    <h1 class="my-4 text-center">Add Student</h1>
+    <form #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          class="form-control"
+          name="firstName"
+          ngModel
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          class="form-control"
+          name="lastName"
+          ngModel
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          name="email"
+          ngModel
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input
+          type="text"
+          id="phoneNumber"
+          class="form-control"
+          name="phoneNumber"
+          ngModel
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input
+          type="number"
+          id="age"
+          class="form-control"
+          name="age"
+          ngModel
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="!studentForm.valid"
+      >
+        Add Student
+      </button>
+    </form>
+  </div>
+</div>

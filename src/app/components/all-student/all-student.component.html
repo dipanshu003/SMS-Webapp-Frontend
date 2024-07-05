@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="container">
+    <h1 class="text-center my-3">All Students</h1>
+
+    <div class="tbl">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Sr No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            <th>Age</th>
+            <th>Phone No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr [routerLink]="['/student-details',student.id]" class="cursor" *ngFor="let student of allStudents; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ student.firstName }}</td>
+            <td>{{ student.lastName }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.phoneNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

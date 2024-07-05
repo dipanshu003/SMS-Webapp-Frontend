@@ -1,0 +1,63 @@
+<div class="container-fluid mt-5">
+  <div class="container w-50">
+    <h1 class="my-4 text-center">Add Relatives</h1>
+    <form #relativesForm="ngForm" (ngSubmit)="onSubmit(relativesForm)">
+      <div class="mb-3">
+        <label for="relation" class="form-label">Relationship</label>
+        <input
+          type="text"
+          id="relation"
+          class="form-control"
+          name="relation"
+          ngModel
+          required
+        />
+      </div>
+      
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          name="name"
+          ngModel
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input
+          type="number"
+          id="age"
+          class="form-control"
+          name="age"
+          ngModel
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!relativesForm.valid"
+      >
+        Add Relative
+      </button>
+      <button type="button" class="btn btn-danger" (click)="onCancel()">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<table>
+  <tbody *ngFor="let s of stuRelArr">
+    <tr>
+      <td>{{s | json}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- student -->
+ <!-- <h2>{{stu | json}}</h2> -->

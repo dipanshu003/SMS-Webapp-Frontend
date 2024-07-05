@@ -1,0 +1,36 @@
+<!-- navbar -->
+<app-navbar></app-navbar>
+
+<div class="container-fluid student-details-container">
+  <div class="container w-50">
+    <h1 class="text-center my-3">Student Details</h1>
+
+    <div class="card shadow-lg mb-5 bg-white rounded">
+      <!-- card header -->
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">{{ student.firstName }} {{ student.lastName }}</h5>
+      </div>
+      <!-- card body -->
+      <div class="card-body">
+        <p><strong>Email:</strong> {{ student.email }}</p>
+        <p><strong>Phone Number:</strong> {{ student.phoneNumber }}</p>
+        <p><strong>Age:</strong> {{ student.age }}</p>
+        <h5 class="mt-4">Relatives:</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let relative of student.relatives">
+            {{ relative.relation }}: {{ relative.name }}, Age: {{ relative.age }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- card footer -->
+       <div class="card-footer text-center">
+
+        <button class="btn btn-warning mx-3" [routerLink]="['/edit-student',student.id]">Edit</button>
+
+        <button class="btn btn-danger mx-3" (click)="onDelete(student.id)">Delete</button>
+
+       </div>
+    </div>
+  </div>
+</div>
